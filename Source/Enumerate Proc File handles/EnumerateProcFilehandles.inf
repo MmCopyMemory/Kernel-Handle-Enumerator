@@ -1,0 +1,62 @@
+;
+; EnumerateProcFilehandles.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = EnumerateProcFilehandles.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+EnumerateProcFilehandles.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%EnumerateProcFilehandles.DeviceDesc% = EnumerateProcFilehandles_Device, Root\EnumerateProcFilehandles ; TODO: edit hw-id
+
+[EnumerateProcFilehandles_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+EnumerateProcFilehandles.sys
+
+;-------------- Service installation
+[EnumerateProcFilehandles_Device.NT.Services]
+AddService = EnumerateProcFilehandles,%SPSVCINST_ASSOCSERVICE%, EnumerateProcFilehandles_Service_Inst
+
+; -------------- EnumerateProcFilehandles driver install sections
+[EnumerateProcFilehandles_Service_Inst]
+DisplayName    = %EnumerateProcFilehandles.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\EnumerateProcFilehandles.sys
+
+[EnumerateProcFilehandles_Device.NT.Wdf]
+KmdfService = EnumerateProcFilehandles, EnumerateProcFilehandles_wdfsect
+
+[EnumerateProcFilehandles_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "EnumerateProcFilehandles Installation Disk"
+EnumerateProcFilehandles.DeviceDesc = "EnumerateProcFilehandles Device"
+EnumerateProcFilehandles.SVCDESC = "EnumerateProcFilehandles Service"

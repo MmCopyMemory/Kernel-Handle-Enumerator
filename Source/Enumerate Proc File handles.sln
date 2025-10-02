@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Enumerate Proc File handles", "Enumerate Proc File handles\Enumerate Proc File handles.vcxproj", "{5E8F2F24-78E0-5D65-774A-9D52088F2F46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|ARM64.Build.0 = Debug|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|x64.ActiveCfg = Debug|x64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|x64.Build.0 = Debug|x64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Debug|x64.Deploy.0 = Debug|x64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|ARM64.ActiveCfg = Release|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|ARM64.Build.0 = Release|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|ARM64.Deploy.0 = Release|ARM64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|x64.ActiveCfg = Release|x64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|x64.Build.0 = Release|x64
+		{5E8F2F24-78E0-5D65-774A-9D52088F2F46}.Release|x64.Deploy.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF563CD8-5249-413F-8FA6-3A30078C5E71}
+	EndGlobalSection
+EndGlobal
